@@ -15,7 +15,7 @@
         <%= form.text_field :content %>
   </div>
   <p> </p>
-  <%= form.submit "Post" %>
+  <%= form.submit "Post", name: 'posts' %>
 <% end %>
 <p> </p>
 <%= link_to "List of publications", publications_path %>
