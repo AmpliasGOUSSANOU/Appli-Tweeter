@@ -1,13 +1,13 @@
 class PublicationsController < ApplicationController
     before_action :set_publication, only: [:show, :edit, :update, :destroy]
     def index
-      @publications = Publication.all
+      @publications = Post.all
     end
     def new
-      @publication = Publication.new
+      @publication = Post.new
     end
     def create
-      @publication = Publication.new(publication_params)
+      @publication = Post.new(publication_params)
       if params[:back]
         render :new
       else
@@ -34,7 +34,7 @@ class PublicationsController < ApplicationController
       redirect_to publications_path, notice:"Delete success"
     end
     def confirm
-      @publication = Publication.new(publication_params)
+      @publication = Post.new(publication_params)
       render :new if @publication.invalid?
     end
     private
@@ -42,6 +42,6 @@ class PublicationsController < ApplicationController
       params.require(:publication).permit(:content)
     end
     def set_publication
-      @publication = Publication.find(params[:id])
+      @publication = Post.find(params[:id])
     end
   end
