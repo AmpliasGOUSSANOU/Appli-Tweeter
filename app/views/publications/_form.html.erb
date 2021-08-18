@@ -1,0 +1,21 @@
+<%= form_with(model: @publication, local: true, url: choose_new_or_edit) do |form| %>
+  <% if @publication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @publication.errors.count %> error(s) found.</h2>
+      <ul>
+            <% @publication.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="publication_content">
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+  </div>
+  <p> </p>
+  <%= form.submit "Post" %>
+<% end %>
+<p> </p>
+<%= link_to "List of publications", publications_path %>

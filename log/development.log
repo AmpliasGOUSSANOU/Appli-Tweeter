@@ -1,0 +1,1094 @@
+  [1m[35m (7613.6ms)[0m  [1m[35mCREATE DATABASE "firstapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1039.4ms)[0m  [1m[35mCREATE DATABASE "firstapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-08-17 11:57:23 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (18.3ms)
+Completed 200 OK in 188ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (700.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (87.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6032273725293611355)[0m
+  ↳ bin/rails:9
+  [1m[35m (14.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePublication (20210817112026)
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (236.2ms)[0m  [1m[35mCREATE TABLE "publications" ("id" bigserial primary key, "content" text)[0m
+  ↳ db/migrate/20210817112026_create_publication.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210817112026"]]
+  ↳ bin/rails:9
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-08-17 13:41:27.337051"], ["updated_at", "2021-08-17 13:41:27.337051"]]
+  ↳ bin/rails:9
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6032273725293611355)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-08-17 16:57:23 +0100
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /root/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /root/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /root/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (6.3ms)
+Completed 200 OK in 146ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publication/new" for ::1 at 2021-08-17 16:57:46 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publication/new"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/new" for ::1 at 2021-08-17 16:58:05 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (289.3ms)
+  Rendered publications/new.html.erb within layouts/application (292.2ms)
+Completed 200 OK in 11635ms (Views: 11586.4ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/publications/confirm" for ::1 at 2021-08-17 16:58:27 +0100
+Processing by PublicationsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ObNbNnDVOuQrj1ejpGely+6ro0GdDt8ODMCFLgTA0vcDLxhmiiRNOOyWU6UW0fp/pynWFjn7MItTLfOUpJcd8w==", "publication"=>{"content"=>""}, "commit"=>"Post"}
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (7.2ms)
+  Rendered publications/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 67ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications" for ::1 at 2021-08-17 16:58:38 +0100
+Processing by PublicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqYMmOQYUS1w+vLS7SLHba2pErhVP8TMbhCthjT47qmgOk/IHukm8bfj9tRflJjZ5Ctn7/HKK0kx/ds8lK8hrQ==", "publication"=>{"content"=>"hhdhhhvfhjsf"}, "commit"=>"Post"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/publications_controller.rb:14
+  [1m[36mPublication Create (153.4ms)[0m  [1m[32mINSERT INTO "publications" ("content") VALUES ($1) RETURNING "id"[0m  [["content", "hhdhhhvfhjsf"]]
+  ↳ app/controllers/publications_controller.rb:14
+  [1m[35m (75.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/publications_controller.rb:14
+Redirected to http://localhost:3000/publications
+Completed 302 Found in 239ms (ActiveRecord: 229.6ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-17 16:58:38 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (1.3ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 90ms (Views: 85.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-17 16:58:46 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.7ms)
+  Rendered publications/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 94ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications/confirm" for ::1 at 2021-08-17 16:58:52 +0100
+Processing by PublicationsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"STE+SLoRaNoZCGSORrHY2KtVxmDW7+aq3mgqXb0pRg+jbbtyo/7ClmX/xJaIp+FMcUWDsR/R4JhZ6BVagxIcJw==", "publication"=>{"content"=>"dbfhjskdnfdsf"}, "commit"=>"Post"}
+  Rendering publications/confirm.html.erb within layouts/application
+  Rendered publications/confirm.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 127ms (Views: 117.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications" for ::1 at 2021-08-17 16:58:59 +0100
+Processing by PublicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ns8BpQ14mzCZYWGqI8F2ExvNf4oAuEiHBf3xQcLEh+KkU0L194ns7F54ZayRdymnUk8K3aRNpwJaEIf7YpNI5g==", "publication"=>{"content"=>"dbfhjskdnfdsf"}, "back"=>"Back"}
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.2ms)
+  Rendered publications/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 97ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-17 16:59:01 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (5.7ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 84ms (Views: 75.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-17 16:59:03 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.0ms)
+  Rendered publications/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-17 16:59:07 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (0.7ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 96ms (Views: 93.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/publications/1/edit" for ::1 at 2021-08-17 16:59:14 +0100
+Processing by PublicationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPublication Load (1.1ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  Rendering publications/edit.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.2ms)
+  Rendered publications/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 85ms (Views: 55.3ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/publications/1" for ::1 at 2021-08-17 16:59:17 +0100
+Processing by PublicationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dqxNxLFMu8cupY7Ym+RKimZ8YZrCgYvV4BVlH93O0uPJUBKoPhROoibHXTWVF8/DjYajZL3sFQiM3OxP7tn12w==", "publication"=>{"content"=>"hhdhhhvfhjsf"}, "commit"=>"Post", "id"=>"1"}
+  [1m[36mPublication Load (0.7ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/publications_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/publications_controller.rb:26
+Redirected to http://localhost:3000/publications
+Completed 302 Found in 21ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-17 16:59:17 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (1.0ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 80ms (Views: 73.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/publications/1" for ::1 at 2021-08-17 16:59:35 +0100
+Processing by PublicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPublication Load (0.7ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  Rendering publications/show.html.erb within layouts/application
+  Rendered publications/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    1: <h1>Publication</h1>
+    2: <p>Content: <%= @publicaton.content %></p>
+  
+app/views/publications/show.html.erb:2:in `_app_views_publications_show_html_erb__4367917302628546712_69851100933060'
+Started GET "/publications/1" for ::1 at 2021-08-17 17:00:23 +0100
+Processing by PublicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPublication Load (2.5ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  Rendering publications/show.html.erb within layouts/application
+  Rendered publications/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 85ms (Views: 73.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-17 17:00:30 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (5.9ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 103ms (Views: 94.7ms | ActiveRecord: 5.9ms)
+
+
+Started DELETE "/publications/1" for ::1 at 2021-08-17 17:00:39 +0100
+Processing by PublicationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6JLro3sV0jkAuodIZNgIiNt5U7f5RpyEWr5gQzKs83PSDqjzgeSl5cejg07Wblc8kvsm4F2zcwEFUxb5kvs8dw==", "id"=>"1"}
+  [1m[36mPublication Load (0.7ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/publications_controller.rb:33
+  [1m[36mPublication Destroy (0.9ms)[0m  [1m[31mDELETE FROM "publications" WHERE "publications"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/publications_controller.rb:33
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/publications_controller.rb:33
+Redirected to http://localhost:3000/publications
+Completed 302 Found in 57ms (ActiveRecord: 29.3ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-17 17:00:39 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (0.5ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-17 17:00:42 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.7ms)
+  Rendered publications/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-17 18:27:13 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.5ms)
+  Rendered publications/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 1284ms (Views: 1280.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/css/normalize.css" for ::1 at 2021-08-17 18:27:24 +0100
+Started GET "/publications/css/style.css" for ::1 at 2021-08-17 18:27:24 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/normalize.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/style.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/images/logo.png" for ::1 at 2021-08-17 18:27:25 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/images/logo.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/css/style.css" for ::1 at 2021-08-17 18:27:29 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/style.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/new" for ::1 at 2021-08-17 18:28:54 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (8.2ms)
+  Rendered publications/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 84ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/css/normalize.css" for ::1 at 2021-08-17 18:28:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/normalize.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/css/style.css" for ::1 at 2021-08-17 18:28:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/style.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/images/logo.png" for ::1 at 2021-08-17 18:28:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/images/logo.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/new" for ::1 at 2021-08-17 18:33:13 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.0ms)
+  Rendered publications/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 95ms (Views: 92.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-17 18:43:07 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (3.6ms)
+  Rendered publications/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 85ms (Views: 82.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/css/normalize.css" for ::1 at 2021-08-17 18:43:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/normalize.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/css/style.css" for ::1 at 2021-08-17 18:43:07 +0100
+Started GET "/publications/images/logo.png" for ::1 at 2021-08-17 18:43:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/style.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/publications/images/logo.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/new" for ::1 at 2021-08-17 18:43:50 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.1ms)
+  Rendered publications/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/css/normalize.css" for ::1 at 2021-08-17 18:43:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/normalize.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/css/style.css" for ::1 at 2021-08-17 18:43:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/css/style.css"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/images/logo.png" for ::1 at 2021-08-17 18:43:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/publications/images/logo.png"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publications/new" for ::1 at 2021-08-18 08:19:39 +0100
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /root/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (66.6ms)
+  Rendered publications/new.html.erb within layouts/application (75.7ms)
+Completed 200 OK in 1992ms (Views: 1499.9ms | ActiveRecord: 435.8ms)
+
+
+Started GET "/publications/logo.png" for ::1 at 2021-08-18 08:19:55 +0100
+Processing by PublicationsController#show as PNG
+  Parameters: {"id"=>"logo"}
+  [1m[36mPublication Load (172.2ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+Completed 404 Not Found in 365ms (ActiveRecord: 173.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Publication with 'id'=logo):
+  
+app/controllers/publications_controller.rb:45:in `set_publication'
+Started GET "/publications/new" for ::1 at 2021-08-18 08:25:26 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (12.1ms)
+  Rendered publications/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 248ms (Views: 245.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/logo.png" for ::1 at 2021-08-18 08:25:27 +0100
+Processing by PublicationsController#show as PNG
+  Parameters: {"id"=>"logo"}
+  [1m[36mPublication Load (0.7ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Publication with 'id'=logo):
+  
+app/controllers/publications_controller.rb:45:in `set_publication'
+Started GET "/publications/new" for ::1 at 2021-08-18 08:25:31 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (10.9ms)
+  Rendered publications/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/logo.png" for ::1 at 2021-08-18 08:25:31 +0100
+Processing by PublicationsController#show as PNG
+  Parameters: {"id"=>"logo"}
+  [1m[36mPublication Load (2.5ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+Completed 404 Not Found in 5ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Publication with 'id'=logo):
+  
+app/controllers/publications_controller.rb:45:in `set_publication'
+Started GET "/publications/new" for ::1 at 2021-08-18 08:26:59 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.7ms)
+  Rendered publications/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 88ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 08:36:15 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.1ms)
+  Rendered publications/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/logo.png" for ::1 at 2021-08-18 08:36:15 +0100
+Processing by PublicationsController#show as PNG
+  Parameters: {"id"=>"logo"}
+  [1m[36mPublication Load (1.0ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+Completed 404 Not Found in 21ms (ActiveRecord: 7.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Publication with 'id'=logo):
+  
+app/controllers/publications_controller.rb:45:in `set_publication'
+Started GET "/publications/new" for ::1 at 2021-08-18 08:38:25 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.4ms)
+  Rendered publications/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 91ms (Views: 88.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/logo" for ::1 at 2021-08-18 08:38:25 +0100
+Processing by PublicationsController#show as HTML
+  Parameters: {"id"=>"logo"}
+  [1m[36mPublication Load (5.2ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+Completed 404 Not Found in 10ms (ActiveRecord: 5.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Publication with 'id'=logo):
+  
+app/controllers/publications_controller.rb:45:in `set_publication'
+Started GET "/publications/new" for ::1 at 2021-08-18 08:40:14 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (3.3ms)
+  Rendered publications/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:08:02 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.0ms)
+  Rendered publications/new.html.erb within layouts/application (213.5ms)
+Completed 200 OK in 2230ms (Views: 2225.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:12:36 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (3.7ms)
+  Rendered publications/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 100ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:15:21 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.7ms)
+  Rendered publications/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 103ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:15:24 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (7.8ms)
+  Rendered publications/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-18 09:15:29 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (19.3ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (98.2ms)
+Completed 200 OK in 171ms (Views: 118.0ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:17:40 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (13.0ms)
+  Rendered publications/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 90ms (Views: 87.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:17:42 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.0ms)
+  Rendered publications/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:17:44 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (12.7ms)
+  Rendered publications/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 232ms (Views: 229.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:18:08 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (6.5ms)
+  Rendered publications/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 62ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-18 09:19:44 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (0.6ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:7
+  Rendered publications/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 84ms (Views: 80.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:19:52 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.2ms)
+  Rendered publications/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 107ms (Views: 104.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:23:19 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (5.3ms)
+  Rendered publications/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications/confirm" for ::1 at 2021-08-18 09:23:47 +0100
+Processing by PublicationsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"crjg40DtY61HJ98Un73/6USgU2wVBgdrydEncDU4PPNIJKOzuhwUcYA+2xItC6BdDSImO7Hz6O6WPFHKlW/z9w==", "publication"=>{"content"=>"Ceci est ma première publication"}, "commit"=>"Post"}
+  Rendering publications/confirm.html.erb within layouts/application
+  Rendered publications/confirm.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 293ms (Views: 258.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications" for ::1 at 2021-08-18 09:23:53 +0100
+Processing by PublicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9qg6yRO0ONhPx/bvW1mJpG/Z16JZ354Ea+6Q3ltNG01RuO73r+nP6YmG90P2zmS2D0SCS2Skf1OQsz52Tr7aQ==", "publication"=>{"content"=>"Ceci est ma première publication"}, "commit"=>"Confirm"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/publications_controller.rb:14
+  [1m[36mPublication Create (1670.0ms)[0m  [1m[32mINSERT INTO "publications" ("content") VALUES ($1) RETURNING "id"[0m  [["content", "Ceci est ma première publication"]]
+  ↳ app/controllers/publications_controller.rb:14
+  [1m[35m (388.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/publications_controller.rb:14
+Redirected to http://localhost:3000/publications
+Completed 302 Found in 2080ms (ActiveRecord: 2060.3ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-18 09:23:55 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (9.4ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:22
+  Rendered publications/index.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 156ms (Views: 116.8ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/publications/2/edit" for ::1 at 2021-08-18 09:24:09 +0100
+Processing by PublicationsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPublication Load (4.3ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  Rendering publications/edit.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.0ms)
+  Rendered publications/edit.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 104ms (Views: 90.6ms | ActiveRecord: 5.6ms)
+
+
+Started PATCH "/publications/2" for ::1 at 2021-08-18 09:24:16 +0100
+Processing by PublicationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PJjB2CG/TM/ODSp6XS6Q3YgRo18Lg99Ips7a5zFr9VRido5/0+2MMJKDwWDBvvoyRa6thxOnFedRw8xAt3DtqQ==", "publication"=>{"content"=>"Ceci est ma première publication"}, "commit"=>"Post", "id"=>"2"}
+  [1m[36mPublication Load (1.8ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/publications_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/publications_controller.rb:26
+Redirected to http://localhost:3000/publications
+Completed 302 Found in 17ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-18 09:24:16 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (1.0ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:22
+  Rendered publications/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 67ms (Views: 61.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-18 09:24:44 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (0.6ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:22
+  Rendered publications/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 72ms (Views: 68.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:26:49 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.3ms)
+  Rendered publications/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 75ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications/confirm" for ::1 at 2021-08-18 09:26:56 +0100
+Processing by PublicationsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I42NCrO+cPupbLkYXzQVayWxtgzi57aQ4d43+kgWjjHJ0QgwqlHat9WbGQCRIiz//6Hz3SvZsKJmXgj9di3UGQ==", "publication"=>{"content"=>"hhdhhhvfhjsf"}, "commit"=>"Post"}
+  Rendering publications/confirm.html.erb within layouts/application
+  Rendered publications/confirm.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications" for ::1 at 2021-08-18 09:26:58 +0100
+Processing by PublicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P6bN0X52Hooi5vCbFjFyhqqAtr1FN3tsd/EpXrNJ99IFOo6BhIdpVuX/9J2khy0y4wLD6uHClOkoHF/kEx441g==", "publication"=>{"content"=>"hhdhhhvfhjsf"}, "back"=>"Back"}
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.1ms)
+  Rendered publications/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 84ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications/confirm" for ::1 at 2021-08-18 09:28:19 +0100
+Processing by PublicationsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9uswjZ87L/qbMMUESmzYt85z/bd9pEd19/fBZQij3ffMd3PdZcpYJlwpwQL42ocDh/GI4NlRqPCoGrffqPQS8w==", "publication"=>{"content"=>""}, "commit"=>"Post"}
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (39.2ms)
+  Rendered publications/new.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 111ms (Views: 104.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/publications/confirm" for ::1 at 2021-08-18 09:46:23 +0100
+Processing by PublicationsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mPublication Load (153.0ms)[0m  [1m[34mSELECT  "publications".* FROM "publications" WHERE "publications"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/publications_controller.rb:45
+Completed 404 Not Found in 555ms (ActiveRecord: 153.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Publication with 'id'=confirm):
+  
+app/controllers/publications_controller.rb:45:in `set_publication'
+Started GET "/publications" for ::1 at 2021-08-18 09:46:32 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (0.9ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:22
+  Rendered publications/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 947ms (Views: 943.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/publications/new" for ::1 at 2021-08-18 09:46:38 +0100
+Processing by PublicationsController#new as HTML
+  Rendering publications/new.html.erb within layouts/application
+  Rendered publications/_form.html.erb (4.2ms)
+  Rendered publications/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 86ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications/confirm" for ::1 at 2021-08-18 09:46:53 +0100
+Processing by PublicationsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/XJnuEEVsA9tI4ng34ee1xx4Lgms1RW/b1QvUXed6AgXLuKCWPoaQxHUKfgRkadDxmhr2GXrE43o1BBWSaayIA==", "publication"=>{"content"=>"dbfhjskdnfdsf"}, "commit"=>"Post"}
+  Rendering publications/confirm.html.erb within layouts/application
+  Rendered publications/confirm.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publications" for ::1 at 2021-08-18 09:46:56 +0100
+Processing by PublicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8hZKogrEx1TJWsl3k7OFicRqHLMMa5rhtDW55IIgnRvIigny8DWwiA5DzXEhBdo9jehp5KiedWTr2M9eIndSHw==", "publication"=>{"content"=>"dbfhjskdnfdsf"}, "commit"=>"Confirm"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/publications_controller.rb:14
+  [1m[36mPublication Create (305.6ms)[0m  [1m[32mINSERT INTO "publications" ("content") VALUES ($1) RETURNING "id"[0m  [["content", "dbfhjskdnfdsf"]]
+  ↳ app/controllers/publications_controller.rb:14
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/publications_controller.rb:14
+Redirected to http://localhost:3000/publications
+Completed 302 Found in 340ms (ActiveRecord: 319.9ms)
+
+
+Started GET "/publications" for ::1 at 2021-08-18 09:46:56 +0100
+Processing by PublicationsController#index as HTML
+  Rendering publications/index.html.erb within layouts/application
+  [1m[36mPublication Load (0.6ms)[0m  [1m[34mSELECT "publications".* FROM "publications"[0m
+  ↳ app/views/publications/index.html.erb:22
+  Rendered publications/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 67ms (Views: 63.7ms | ActiveRecord: 0.6ms)
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TweeterApp</title>
+  </head>
+
+  <body>
+    <header>
+    <ul>
+      <li class="left"><a>TweeterApp</a></li>
+      <li class="right"><%= link_to "Publications", publications_path %></li>
+    </ul>
+    </header>
+    <div class="left">
+      <h1>LIST OF PUBLICATIONS</h1>
+      <p><%= notice %></p>
+      <table>
+        <tr>
+          <th>Content</th>
+        </tr>
+      <% @publications.each do |publication| %>
+        <tr>
+          <td><%= publication.content %></td>
+          <td><%= link_to 'Show', publication_path(publication.id) %></td>
+          <td><%= link_to "Edit", edit_publication_path(publication.id), data: { confirm: 'Are you sure to edit？' } %></td>
+          <td><%= link_to 'Delete', publication_path(publication.id), method: :delete, data: { confirm: 'Are you sure to delete？' } %></td>
+        </tr>
+      <% end %>
+      </table>
+      <%= link_to 'Create new publication', new_publication_path %>
+    </div>
+    <footer>
+      <p>Copyright © 2021 TweeterApp.</p>
+    </footer>
+  </body>
+</html>
+
+

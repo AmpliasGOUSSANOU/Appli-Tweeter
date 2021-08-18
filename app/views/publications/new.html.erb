@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TweeterApp</title>
+  </head>
+
+  <body>
+    <header>
+    <ul>
+      <li class="left"><a>TweeterApp</a></li>
+      <li class="right"><%= link_to "Publications", publications_path %></li>
+    </ul>
+    </header>
+    <div class="left">
+      <h2 >Create a new publication: </h2>
+      <%= render 'form' %>
+    </div>
+    <footer>
+      <p>Copyright © 2021 TweeterApp.</p>
+    </footer>
+  </body>
+</html>
